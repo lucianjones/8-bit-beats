@@ -5,10 +5,6 @@ const usersRouter = require('./users.js');
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
-router.post('/test', function (req, res) {
-    res.json({ requestBody: req.body });
-});
-
 
 module.exports = router;
 
@@ -31,3 +27,6 @@ module.exports = router;
 // router.get('/restore-user', restoreUser, (req, res) => res.json(req.user));
 //
 // router.get('/require-auth', requireAuth, (req, res) => res.json(req.user));
+// router.post('/test', function (req, res) {
+//     res.json({ requestBody: req.body });
+// });
