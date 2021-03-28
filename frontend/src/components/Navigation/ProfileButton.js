@@ -31,18 +31,21 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i class="fas fa-microchip"></i>
-      </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
+      <div>
+        <div id='stupidgreenbox'></div>
+        <button onClick={openMenu} id="profile-button">
+          <i className="nes-icon coin is-large"></i>
+        </button>
+        {showMenu && (
+          <ul dir='rtl' className="profile-dropdown">
+            <li>{user.username}</li>
+            <li>{user.email}</li>
+            <li>
+              <button id='logout' className="nes-btn is-primary" onClick={logout}>Log Out</button>
+            </li>
+          </ul>
+        )}
+      </div>
     </>
   );
 }

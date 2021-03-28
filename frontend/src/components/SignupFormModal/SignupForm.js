@@ -1,20 +1,16 @@
 // frontend/src/components/SignupFormPage/index.js
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
-function SignupFormPage() {
+function SignupForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
-  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +33,7 @@ function SignupFormPage() {
       <label>
         Email
         <input
+          className="nes-input is-warning"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -46,6 +43,7 @@ function SignupFormPage() {
       <label>
         Username
         <input
+          className="nes-input is-warning"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -55,6 +53,7 @@ function SignupFormPage() {
       <label>
         Password
         <input
+          className="nes-input is-warning"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -64,15 +63,16 @@ function SignupFormPage() {
       <label>
         Confirm Password
         <input
+          className="nes-input is-warning"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit">Sign Up</button>
+      <button type="submit" className="nes-btn is-warning">Sign Up</button>
     </form>
   );
 }
 
-export default SignupFormPage;
+export default SignupForm;

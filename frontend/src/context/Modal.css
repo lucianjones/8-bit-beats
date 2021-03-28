@@ -16,10 +16,17 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #modal-content {
-  position: absolute;
-  background-color:white;
+  position: relative;
+  border-radius: 10px;
+  /* display: flex;
+  justify-content: center; */
+  background-image: url(../public/tv.png);
+  background-size:100%;
+  padding: 100px;
+  width: 1019px;
+  height: 624px;
 }

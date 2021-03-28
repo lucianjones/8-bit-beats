@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 function Root() {
-  return (
+  return ( 
     <Provider store={store}>
       <ModalProvider>
         <BrowserRouter>
