@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import SearchBar from '../SearchBar';
+import UploadSongModal from '../UploadSongModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -14,7 +15,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div id='top-right'>
+        <UploadSongModal />
+        <ProfileButton user={sessionUser} />
+      </div>
     );
   } else {
     sessionLinks = (
@@ -28,9 +32,9 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className="navbuttons nes-container is-rounded">
-        <NavLink className="logo nes-btn is-error" exact to="/">
-          <span className="is-error"> 8 bit beats </span>
+    <div className="navbuttons cont">
+        <NavLink className="logo" exact to="/">
+          <span className="btn red"> 8 bit beats </span>
         </NavLink>
         <SearchBar />
         {isLoaded && sessionLinks}

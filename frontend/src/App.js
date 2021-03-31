@@ -1,9 +1,11 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SongList from './components/SongList';
+import SongPage from './components/SongPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,8 +19,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/'>
+            <SongList />
+          </Route>
+          <Route path='/songs/:id'>
+            <SongPage />
+          </Route>
         </Switch>
-      )}      
+      )}
       <div className="bg"></div>
     </>
   );

@@ -32,16 +32,15 @@ function ProfileButton({ user }) {
   return (
     <>
       <div>
-        <div id='stupidgreenbox'></div>
         <button onClick={openMenu} id="profile-button">
-          <i className="nes-icon coin is-large"></i>
+          <img id='coin' src='https://8bitbeats.s3.us-east-2.amazonaws.com/coin.png' />
         </button>
         {showMenu && (
           <ul dir='rtl' className="profile-dropdown">
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
-              <button id='logout' className="nes-btn is-primary" onClick={logout}>Log Out</button>
+              <button id='logout' className="btn red" onClick={logout}>Log Out</button>
             </li>
           </ul>
         )}

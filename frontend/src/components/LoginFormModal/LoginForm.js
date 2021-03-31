@@ -22,33 +22,33 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='login-form'>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <label>
+      <label className='login-label'>
         Username or Email
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow login-input"
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
       </label>
-      <label>
+      <label className='login-label'>
         Password
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow login-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit" className="nes-btn is-warning">Log In</button>
+      <button type="submit" className="btn green login-button">Log In</button>
     </form>
   );
 }

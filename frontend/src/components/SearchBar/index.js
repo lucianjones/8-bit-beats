@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
+import './SearchBar.css'
 
 
 export default function SearchBar () {
@@ -10,7 +12,7 @@ export default function SearchBar () {
     useEffect(() => {focusSearch.current.focus()}, []);
 
     const getSongs = async (query) => {
-        const results = await csrfFetch(`api/search?name=${query}`);
+        const results = await csrfFetch(`/api/search?name=${query}`);
         const songsData = await results.json();
         return songsData;
     }
@@ -29,7 +31,7 @@ export default function SearchBar () {
             await sleep(350);
             if (currentQuery) {
                 const { songs } = await getSongs(query, controller);
-                setSongs(songs);
+                setSongs(songs[0]);
             }
         }
         loadSongs();
@@ -40,25 +42,22 @@ export default function SearchBar () {
         }
     }, [query])
 
-    const [showSearch, setShowSearch] = useState(true);
+    const [showSearch, setShowSearch] = useState(false);
 
     const closeSearch = () => {
         if (!showSearch) return;
+        setQuery('')
         setShowSearch(false)
     }
    
-    // useEffect(() =>{
-    //     if (!showSearch) return;
+    const doubleCall = e => {
+        setQuery(e.target.value)
+        setShowSearch(true)
+        if (!e.target.value) {
+            setShowSearch(false)
+        }
+    }
 
-    //     const closeSearch = () => {
-    //         setShowSearch(false)
-    //     }
-    //     document.addEventListener('click', closeSearch)
-        
-    //     return () => document.removeEventListener("click", closeSearch);
-    // }, [showSearch]);
-
-    // need to work on closing search!!
     return (
        <div id="search-div">
             <input 
@@ -66,17 +65,17 @@ export default function SearchBar () {
                 value={query}
                 placeholder={"Search for a song..."}
                 ref={focusSearch}
-                onChange={(e) => setQuery(e.target.value)}
-                className="nes-input"
+                onChange={(e) => doubleCall(e)}
+                className="inpt"
             />
-            <button onClick={closeSearch} id='search-button'>x</button>
             {showSearch && (
-            <ul id="search-results">
-                {songs.map((song, index) => {
+            <div id="search-results">
+                <button onClick={closeSearch} id='search-button' className="btn red">X</button>
+                {songs.map((arr) => {
                     return (
-                        <li key={index} className="nes-container is-rounded" >{song.name}</li>
+                        <NavLink exact to={`/songs/${arr.item.id}`} onClick={closeSearch} key={arr.item.name}>{arr.item.name}</NavLink>
                     )})}
-            </ul>
+            </div>
             )}
         </div>
     );

@@ -7,7 +7,7 @@ function SignupFormModal() {
 
     return (       
     <>
-      <button onClick={() => setShowModal(true)} className="nes-btn is-warning">Sign Up</button>
+      <button onClick={() => setShowModal(true)} className="btn yellow logsi">Sign Up</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <SignupForm />

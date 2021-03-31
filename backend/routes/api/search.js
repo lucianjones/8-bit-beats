@@ -1,18 +1,26 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { check } = require('express-validator');
+const db = require('../../db/models');
+const Fuse = require('fuse.js');
 
-const { handleValidationErrors } = require('../../utils/validation');
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
 
 const router = express.Router();
 
 
-router.get('/', asyncHandler(async function (req, res) { 
+router.get('/', asyncHandler(async function (req, res) {
     const { name } = req.query
-    console.log(name)
-    res.json({ songs: [{name: 'a'}, {name: 'b'}]});
+    const songs = await db.Song.findAll({ include: [db.Artist, db.Album] });
+    const options = {
+        includeScore: true,
+        // equivalent to `keys: [['author', 'tags', 'value']]`
+        keys: ['name', 'Album.name', 'Artist.name']
+    }
+
+    const fuse = new Fuse(songs, options)
+    const result = fuse.search(name)
+    console.log(result)
+
+    res.json({ songs: [result] });
 }))
 
 module.exports = router;

@@ -26,51 +26,51 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='signup-form'>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <label>
+      <label className='signup-label'>
         Email
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow signup-input"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
       </label>
-      <label>
+      <label className='signup-label'>
         Username
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow signup-input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
       </label>
-      <label>
+      <label className='signup-label'>
         Password
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow signup-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <label>
+      <label className='signup-label'>
         Confirm Password
         <input
-          className="nes-input is-warning"
+          className="inpt-yellow signup-input"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
       </label>
-      <button type="submit" className="nes-btn is-warning">Sign Up</button>
+      <button type="submit" className="btn green signup-button">Sign Up</button>
     </form>
   );
 }

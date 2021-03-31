@@ -1,0 +1,24 @@
+.song-list {
+   font-family: 'Press Start 2P', cursive; 
+   height: 150px;
+   width: 250px;
+   text-decoration: none;
+   color: black;
+   background-color: #ffffff66;
+   backdrop-filter: blur(10px);
+   text-align: center;
+   font-size: 14px;
+   padding-top: 100px;
+}
+.song-div {
+    width: 80%;
+    margin: 10px 12%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1 !important;
+    position: relative;
+}
+.song-list:hover {
+    color: white;
+    background: none;
+}
