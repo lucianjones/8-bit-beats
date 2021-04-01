@@ -9,8 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(23, 190, 23, .6);
-  backdrop-filter: blur(10px);
+  background-color: rgba(23, 190, 23, 1);
   margin: 0 20px 0 20px!important;
   /* width: 100%; */
   top: 0px;
@@ -31,14 +30,14 @@
 
 .profile-dropdown {
   position: absolute;
-  right: 28px;
-  top: 106px;
+  right: -4px;
+  top: 94px;
   list-style: '🍄';
   text-align: right;
   border-bottom: 4px solid rgb(34, 32, 32);
   border-left: 4px solid rgb(34, 32, 32);
   border-right: 4px solid rgb(34, 32, 32);
-  background-color: rgb(23, 190, 23);
+  background-color: rgba(23, 190, 23, 1);
   padding-top: 30px;
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;

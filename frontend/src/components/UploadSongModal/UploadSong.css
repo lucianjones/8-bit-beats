@@ -1,0 +1,36 @@
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 440px;
+    align-content: center;
+    justify-content: center;
+    padding: 0px 50px 0px;
+    position: relative;
+    bottom: 70px;
+
+}
+.upload-input {
+    height: 30px;
+    font-family: 'Press Start 2P', cursive;  
+    padding: 5px;
+    margin: 10px 20px;
+}
+
+.upload-file {
+    display: none;
+}
+
+#upload-label {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    align-self: center;
+}
+
+.upload-btn {
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    align-self: center;
+}

@@ -15,7 +15,6 @@
     margin: 10px 12%;
     display: flex;
     flex-wrap: wrap;
-    z-index: 1 !important;
     position: relative;
 }
 .song-list:hover {

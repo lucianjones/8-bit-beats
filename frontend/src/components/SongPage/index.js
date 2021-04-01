@@ -5,7 +5,6 @@ import { getOneSong } from '../../store/songs';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './SongPage.css'
-import play from './play.svg'
 
 const SongPage = () => {
     const dispatch = useDispatch();
@@ -25,9 +24,7 @@ const SongPage = () => {
         <AudioPlayer
           src={song?.url}
           onPlay={e => console.log("onPlay")}
-          customIcons= {
-             { play: play}
-          }
+
         />
     );
 

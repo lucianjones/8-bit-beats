@@ -11,9 +11,10 @@ router.get('/', asyncHandler(async function (req, res) {
     const { name } = req.query
     const songs = await db.Song.findAll({ include: [db.Artist, db.Album] });
     const options = {
+        limit: 8,
+        threshold: .4,
         includeScore: true,
-        // equivalent to `keys: [['author', 'tags', 'value']]`
-        keys: ['name', 'Album.name', 'Artist.name']
+        keys: [{ name: 'name', weight: 2 }, 'Album.name', 'Artist.name']
     }
 
     const fuse = new Fuse(songs, options)

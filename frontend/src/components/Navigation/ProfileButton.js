@@ -33,7 +33,7 @@ function ProfileButton({ user }) {
     <>
       <div>
         <button onClick={openMenu} id="profile-button">
-          <img id='coin' src='https://8bitbeats.s3.us-east-2.amazonaws.com/coin.png' />
+          <img id='coin' src='https://8bitbeats.s3.us-east-2.amazonaws.com/coin.png' alt='coin'/>
         </button>
         {showMenu && (
           <ul dir='rtl' className="profile-dropdown">

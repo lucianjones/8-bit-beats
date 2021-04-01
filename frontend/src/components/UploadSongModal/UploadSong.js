@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { addOneSong } from '../../store/songs';
 import { useDispatch } from 'react-redux';
+import './UploadSong.css'
 
 const UploadSong = () => {
     const [name, setName] = useState('');
@@ -36,38 +37,36 @@ const UploadSong = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form className='upload-form' onSubmit={handleSubmit}>
             <ul>
                 {errors}
             </ul>
-            <label>
                 <input
                     type="text"
+                    className='upload-input inpt'
                     placeholder='Name'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-            </label>
-            <label>
                 <input 
                     type="text"
+                    className='upload-input inpt'
                     placeholder='Artist'
                     value={artist}
                     onChange={(e) => setArtist(e.target.value)}
                 />
-            </label>
-            <label>
                 <input
                     type="text"
+                    className='upload-input inpt'
                     placeholder='Album'
                     value={album}
                     onChange={(e) => setAlbum(e.target.value)}
                 />
+            <label id='upload-label' className='btn green'>
+                Browse
+                <input className='upload-file' type='file' onChange={updateFile} />
             </label>
-            <label>
-                <input type='file' onChange={updateFile} />
-            </label>
-            <button type="submit">Upload Song</button>
+            <button className='upload-btn btn blue' type="submit">Upload Song</button>
         </form>
         </>
     )
