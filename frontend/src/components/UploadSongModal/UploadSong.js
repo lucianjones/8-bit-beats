@@ -1,29 +1,36 @@
 import React, { useState } from 'react';
 import { addOneSong } from '../../store/songs';
 import { useDispatch } from 'react-redux';
-import './UploadSong.css'
+import { useHistory } from 'react-router-dom';
+import './UploadSong.css';
 
-const UploadSong = () => {
+const UploadSong = ({ setShowModal }) => {
     const [name, setName] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [newFile, setNewFile] = useState(null);
     const [errors, setErrors] = useState([]);
+    const [load, setLoad] = useState(false);
 
     const dispatch = useDispatch();
+    const history = useHistory();
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addOneSong({ name, artist, album, newFile }))
+        return dispatch(addOneSong({ name, artist, album, newFile }))
             .then(() =>{
                 setName('');
                 setArtist('');
                 setAlbum('');
                 setNewFile(null);
+                setLoad(false);
+                history.push('/');
+                setShowModal(false);
             })
             .catch(async (res) => {
                 const data = await res.json();
-                console.log(data.title)
+                console.log(data)
                 if (data && data.title) {
                     setErrors(['Invalid Form Data']);
                 };
@@ -34,9 +41,11 @@ const UploadSong = () => {
         const file = e.target.files[0];
         if (file) setNewFile(file);
     };
-
+    
+ 
     return (
         <>
+            { load && <div className='load-screen'>Loading...</div>}
         <form className='upload-form' onSubmit={handleSubmit}>
             <ul>
                 {errors}
@@ -66,7 +75,7 @@ const UploadSong = () => {
                 Browse
                 <input className='upload-file' type='file' onChange={updateFile} />
             </label>
-            <button className='upload-btn btn blue' type="submit">Upload Song</button>
+            <button onClick={() => setLoad(true)} className='upload-btn btn blue' type="submit">Upload Song</button>
         </form>
         </>
     )

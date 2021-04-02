@@ -13,12 +13,13 @@ module.exports = {
       }], {});
     */
         return queryInterface.bulkInsert('Artists', [
-            { name: 'Led Zepplin' },
-            { name: 'A$AP Rocky' },
-            { name: 'Johnny Cash' },
-            { name: 'Rick James' },
-            { name: '50 Cent' },
-            { name: 'Kanye West' }
+            { name: 'David Renda' },
+            { name: 'David Fesliyan' },
+            { name: 'Jim Hall' },
+            { name: 'Nullsleep' },
+            { name: 'Stephen Bennet' },
+            { name: 'Captive Portal' },
+            { name: 'sawsquarenoise' },
         ])
     },
 

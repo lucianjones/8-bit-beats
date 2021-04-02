@@ -5,8 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         artistId: DataTypes.INTEGER,
         albumId: DataTypes.INTEGER,
         url: DataTypes.STRING,
-        length: DataTypes.NUMERIC
-    }, {});
+       }, {});
     Song.associate = function (models) {
         Song.belongsTo(models.Artist, { foreignKey: 'artistId', onDelete: 'Cascade', hooks: true });
         Song.belongsTo(models.Album, { foreignKey: 'albumId', onDelete: 'Cascade', hooks: true });

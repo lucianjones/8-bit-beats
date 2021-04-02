@@ -27,6 +27,7 @@ const SongPage = () => {
 
         />
     );
+    console.log(song?.url)
 
     return (
         <div className="song-page">
@@ -34,6 +35,7 @@ const SongPage = () => {
             <div className='song-artist'>** {song?.Artist.name} **</div>
             <div className='song-album'>- {song?.Album.name} -</div>     
             <Player />
+            <a href={song?.url} download={`${song?.name}.mp3`}>Download</a>
         </div>
     )
 }

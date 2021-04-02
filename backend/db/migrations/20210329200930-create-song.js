@@ -26,10 +26,6 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING
             },
-            length: {
-                allowNull: false,
-                type: Sequelize.NUMERIC
-            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

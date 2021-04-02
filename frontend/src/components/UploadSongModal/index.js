@@ -7,10 +7,10 @@ function UploadSongModal() {
 
     return (       
     <>
-      <button onClick={() => setShowModal(true)} className="btn blue logsi" id="upload">Upload</button>
+      <button onClick={() => setShowModal(true)} className="btn blue% logsi" id="upload">Upload</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadSong />
+          <UploadSong setShowModal={setShowModal} />
         </Modal>
       )}
     </>

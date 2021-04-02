@@ -34,3 +34,18 @@
     text-align: center;
     align-self: center;
 }
+
+.load-screen {
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    color: white;
+    text-align: center;
+    padding-top: 30%;
+    font-family: 'Press Start 2P', cursive;  
+    font-size: 50px;
+}
