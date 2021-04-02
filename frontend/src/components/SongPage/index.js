@@ -35,7 +35,7 @@ const SongPage = () => {
             <div className='song-artist'>** {song?.Artist.name} **</div>
             <div className='song-album'>- {song?.Album.name} -</div>     
             <Player />
-            <a href={song?.url} download={`${song?.name}.mp3`}>Download</a>
+            <a id='download' className='btn blue' href={song?.url} download={`${song?.name}.mp3`}>Download</a>
         </div>
     )
 }
