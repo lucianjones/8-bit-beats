@@ -1,6 +1,6 @@
 # 8 Bit Beats
 
-[Live site](https://queue-flood.herokuapp.com/)
+[Live site](https://eight-bit-beats.herokuapp.com/)
 ## Wiki Links
  - [Database Schema](https://github.com/lucianjones/authenticate-me/wiki/Database-Schema)
  - [MVP Feature List](https://github.com/lucianjones/authenticate-me/wiki/MVP-Feature-List)
