@@ -16,12 +16,14 @@
   height: 90px;
   z-index: 2;
   position: relative;
+  cursor: pointer;
 }
 
 #profile-button {
   background-color: transparent;
   border: none;
   position: relative;
+  cursor: pointer;
 }
 
 #coin {
@@ -45,7 +47,8 @@
 #logout {
     margin: 10px;
     font-size: 10px;
-    width: 100px
+    width: 100px;
+  cursor: pointer;
 }
 #top-right {
   display: flex;
@@ -53,4 +56,5 @@
 
 #upload {
   align-self: center;
+  cursor: pointer;
 }

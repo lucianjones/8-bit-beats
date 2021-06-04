@@ -23,6 +23,7 @@
     align-self: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
+    cursor: pointer;
 }
 .login-input {
     height: 50px;
