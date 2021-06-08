@@ -36,10 +36,10 @@
 }
 
 .rhap_main-controls-button, .rhap_volume-button, .rhap_repeat-button  {
-    color: #108de0;
+    color: #ffffff;
 }
 .rhap_volume-indicator, .rhap_progress-indicator {
-    background-color: #108de0;
+    background-color: #ffffff;
 }
 
 .rhap_time{
