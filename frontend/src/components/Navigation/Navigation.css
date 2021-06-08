@@ -26,6 +26,11 @@
   cursor: pointer;
 }
 
+#demo {
+    height: 40px;
+    padding: 0 5px;
+    cursor: pointer;
+}
 #coin {
   height: 60px;
 }
@@ -41,9 +46,14 @@
   border-right: 4px solid rgb(34, 32, 32);
   background-color: rgba(23, 190, 23, 1);
   padding-top: 30px;
+  padding-left: 5px;
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;
 }
+.profile-dropdown > * {
+    margin-top: 3px;
+}
+
 #logout {
     margin: 10px;
     font-size: 10px;
