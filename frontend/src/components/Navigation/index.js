@@ -1,7 +1,8 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from "../../store/session";
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -11,6 +12,15 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  
+  function demo(e) {
+      e.preventDefault();
+      return dispatch(sessionActions.login({ credential: 'demo@aa.io',
+                                             password: 'password'
+                                            }))
+
+  };
 
   let sessionLinks;
   if (sessionUser) {
@@ -26,6 +36,7 @@ function Navigation({ isLoaded }){
         <div>
           <LoginFormModal />
           <SignupFormModal />
+          <button onClick={demo}>Demo User</button>
         </div>
       </>
     );
