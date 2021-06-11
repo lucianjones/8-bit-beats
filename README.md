@@ -8,6 +8,9 @@
 
 ## Project Summary
 	8 Bit Beats is a website where you can browse, stream, upload, and download all of your favorite retro tracks.
+	
+![8bb](https://user-images.githubusercontent.com/63375283/121714144-90a6c900-caab-11eb-9858-0f3b2a42c601.png)
+
 ## How to Install
 
  1. clone repo
